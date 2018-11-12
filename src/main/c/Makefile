@@ -54,7 +54,7 @@ LINKBSD64=c++ -m64 -shared
 WINLINKOPT = -shared -Wl,--add-stdcall-alias -DBUILD_DLL
 WINCCOPT = -O3 -Wall -DBUILD_DLL
 #JDKDIR = C:\Program Files\Java\jdk1.6.0_24\include
-JDKDIR = D:/java-32/jdk1.7.0_25/include
+JDKDIR = C:\Program Files\Java\jdk1.8.0_121\include
 
 WININCLUDE32=-I".\include" -I".\include\target" -I".\include\windows" -I"C:\MinGW\include" -I"$(JDKDIR)" -I"$(JDKDIR)\win32"
 CCWIN32 = wine "C:\MinGW\bin\gcc.exe" $(WININCLUDE32) -m32 $(WINCCOPT)

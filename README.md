@@ -59,7 +59,7 @@ ease of use and embeddability in other libraries.
 
         $ git clone https://github.com/NeuronRobotics/nrjavaserial.git
 
-2. Build with Gradle.
+2. Build with Gradle.  If you do not have gradle, install it following instructions from https://docs.gradle.org/current/userguide/installation.html
 
         $ cd nrjavaserial
         $ gradle build
@@ -71,8 +71,11 @@ The resulting JAR will be found in the `build/libs/` directory.
 Native code is built using the Makefile found in the root of the repository.
 After the native code is built, the JAR is rebuilt.
 
-    # Build both the 32- and 64-bit Windows binaries.
+    # Build both the 32- and 64-bit Windows binaries on Windows.
     $ make windows
+
+You may need to manually create the build folders. You need to install both 32-bit and 64/32 bit versions of TDM-GCC for the complete build to work. You also need to edit the Makefile located in src/main/c/Makefile at line 57 to "JDKDIR = C:\Program Files\Java\jdk1.8.0_121\include"
+  to correct JDK location. You may also need to make a copy of mingw32-make.exe to make.exe in the installation folder C:\TDM-GCC-64\bin, since the makefiles call it by "make".
 
     # Build the windows binaries on Linux via Wine.
     $ make wine
